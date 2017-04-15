@@ -1,45 +1,24 @@
-Minimal Node.js Docker Images
+Minimal Node.js Docker Image
 -----------------------------
 
-Versions v7.8.0, v6.10.2, v4.8.2, v0.12.18 and v0.10.48 –
+Version v6.10.2 –
 built on [Alpine Linux](https://alpinelinux.org/).
 
-All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
-but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`). The sizes are for the
+All versions use the one [margussipria/alpine-node](https://hub.docker.com/r/margussipria/alpine-node/) repository,
+but each version aligns with the following tags (ie, `margussipria/alpine-node:<tag>`). The sizes are for the
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm:
-  - `latest`, `7`, `7.8`, `7.8.0` – 56.7 MB (npm 4.4.4)
-  - `6`, `6.10`, `6.10.2` – 49.3 MB (npm 3.10.10)
-  - `4`, `4.8`, `4.8.2` – 35.8 MB (npm 2.15.12)
-  - `0.12`, `0.12.18` – 33.36 MB (npm 2.15.11)
-  - `0.10`, `0.10.48` – 28.16 MB (npm 2.15.11)
-- Base install with node built as a static binary with no npm:
-  - `base`, `base-7`, `base-7.8`, `base-7.8.0` – 43.5 MB
-  - `base-6`, `base-6.10`, `base-6.10.2` – 37.8 MB
-  - `base-4`, `base-4.8`, `base-4.8.2` – 27.2 MB
-  - `base-0.12`, `base-0.12.18` – 24.72 MB
-  - `base-0.10`, `base-0.10.48` – 18.22 MB
-
-Major io.js versions [are tagged too](https://hub.docker.com/r/mhart/alpine-node/tags/).
+  - `6`, `6.10`, `6.10.2` – 53.4 MB (npm 3.10.10)
 
 Examples
 --------
 
-    $ docker run mhart/alpine-node node --version
-    v7.8.0
-
-    $ docker run mhart/alpine-node npm --version
-    4.4.4
-
-    $ docker run mhart/alpine-node:6 node --version
+    $ docker run margussipria/alpine-node:6 node --version
     v6.10.2
 
-    $ docker run mhart/alpine-node:base node --version
-    v7.8.0
-
-    $ docker run mhart/alpine-node:base-0.10 node --version
-    v0.10.48
+    $ docker run margussipria/alpine-node:6 npm --version
+    3.10.10
 
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
@@ -51,8 +30,8 @@ then you don't need an `npm install` step in your Dockerfile and you don't need
 `npm` installed in your Docker image – so you can use one of the smaller
 `base*` images.
 
-    FROM mhart/alpine-node:base-6
-    # FROM mhart/alpine-node:6
+    FROM margussipria/alpine-node:base-6
+    # FROM margussipria/alpine-node:6
 
     WORKDIR /src
     ADD . .
