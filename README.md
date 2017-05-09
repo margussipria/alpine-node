@@ -1,20 +1,20 @@
 Minimal Node.js Docker Image
 -----------------------------
 
-Version v7.9.0 built on [Alpine Linux](https://alpinelinux.org/).
+Version v7.10.0 built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [margussipria/alpine-node](https://hub.docker.com/r/margussipria/alpine-node/) repository,
 but each version aligns with the following tags (ie, `margussipria/alpine-node:<tag>`). The sizes are for the
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm:
-  - `7`, `7.9`, `7.9.0` – 54.7 MB (npm 4.2.0)
+  - `7`, `7.9`, `7.10.0` – 54.7 MB (npm 4.2.0)
 
 Examples
 --------
 
     $ docker run margussipria/alpine-node:7 node --version
-    v7.9.0
+    v7.10.0
 
     $ docker run margussipria/alpine-node:7 npm --version
     4.2.0
